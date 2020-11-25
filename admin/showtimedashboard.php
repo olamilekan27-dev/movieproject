@@ -12,7 +12,7 @@ include('adminheader.php');
       <div class="row">
         <div class="col-md-6">
           
-          <Span style="font-size: 30px">Show Timings</Span>
+          <Span style="font-size: 30px">Movie Show time List</Span>
           
         </div>
 
@@ -29,34 +29,18 @@ include('adminheader.php');
       
         <div class="col-md-6">
           
-          <Span style="font-size: 20px">Show Timings</Span>
+          <Span style="font-size: 20px">Show List</Span>
           
         </div>
 
         <div class="col-md-6" style="text-align: right; margin-top: 20px">
-          <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal"><a href="../selectmovie.php">Selct Movies</a></button>
-
+          
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="text-align: center">
-          <h4 class="modal-title">Add Movie Cinema</h4>
-        </div>
-        <div class="modal-body" style="text-align: center">
-          <p>Cinema Name:</p>
-          <input type="text" style="width: 400px;border: 3px solid skyblue" name=""><br>
-           <p>Cinema Image:</p>
-          <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-
-          <button type="button" class="btn btn-info">Add cinema</button>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-        </div>
-      </div>
+     
       
     </div>
   </div>
@@ -64,7 +48,7 @@ include('adminheader.php');
   <br><br>
 
 
-   <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">Delete Selected</button>
+   <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">Delete Movies</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -84,45 +68,47 @@ include('adminheader.php');
     <thead>
       <tr>
         <th>S/N</th>
-        <th>Cinema Name</th>
-        <th>Movie</th>
-        <th>Start/End Date</th>
-        <th>Start/End Time</th>
-        <th>Weekdays Ticket Prices</th>
-        <th>Weekend Ticket Prices</th>
-        <th>Blockbluster Movies Prices</th>
-        <th>Movies in 3D</th>
-        <th>Delete</th>
-        <th>Modify</th>
+        <th>Cinema name</th>
+        <th>Movie Name</th>
+        <th>Show Start Date</th>
+        <th>Show End date</th>
+        <th>Weekdays</th>
+        <th>Weekend</th>
+        <th>Bluckbluster</th>
+        <th>3D Movies</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
+      <?php
+
+
+          $columbia = 1;
+          foreach($movie->getMovieAssoc() as $key => $value){
+
+        ?>
       <tr>
-        <td>1</td>
-        <td>FilmHouse Dugbe</td>
-        <td>Rise of the Saint</td>
-        <td>2020-11-17/2020-11-31</td>
-        <td>14.00.00/17.00.00</td>
-        <td>₦1,000 Flat(Popcorn)</td>
-        <td>₦2,500 (Popcorn and drink)</td>
-        <td>₦3,000 (Popcorn and drink)</td>
-        <td>₦3,000 Flat (Popcorn and drink)</td>
-        <td><input type="checkbox" name=""></td>
-        <td><a href="">Edit</a></td>
+        <td><?php echo $columbia++; ?></td>
+        <td><?php echo $value['selectcinema'];?></td>
+        <td><?php echo $value['selectmovie'];?></td>
+        <td><?php echo $value['showstart'];?></td>
+        <td><?php echo $value['showend'];?></td>
+        <td><?php echo $value['weekdays'];?></td>
+        <td><?php echo $value['weekend'];?></td>
+        <td><?php echo $value['bluckbluster'];?></td>
+        <td><?php echo $value['movies3d'];?></td>
+        <td>
+        <a href="edit.php?id=<?php echo $value['movies_id'];?>">Edit details</a>
+        <a href="">Delete</a>
+        </td>
       </tr>
+      <?php
+
+          }
+        ?>
       
     </tbody>
   </table>
-                
-                
-                
-            </div>
-
-          </div>
-
-          </div>
-      
-    </div>
 
 
   <?php include('adminscript.php') ?>

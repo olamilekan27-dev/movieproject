@@ -536,11 +536,36 @@ function Adddetails($cinemaid,$movieid,$cinemaname,$moviename,$showstartdate,$sh
 
 
 
+function getMovieshowingAssoc(){
+
+	 	//query to select all
+
+				$sql = "SELECT * FROM movie_showings";
+				$outputdata = array();
+
+
+				//check if the query() runs the sql statement
+
+			if($result = $this->dbobj->dbcon->query($sql)) {
+
+				// $output = $result->fetch_all(MYSQLI_BOTH);
+
+				 while($output =  $result->fetch_assoc()){
+
+				 	$outputdata[] = $output;
+				 }
+
+			}else{
+
+				echo "Error: ".$this->dbobj->dbcon->error;
+			}
+
+
+				return $outputdata;
 
 
 
-
-
+}
 
 
 
