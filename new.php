@@ -1,3 +1,12 @@
+
+<?php 
+if (!session_id()) {
+# code...
+  session_start();
+} 
+include 'movieclass.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -125,30 +134,56 @@
 
 
 
-<div class="container">
-
-  <div  class="panel with-nav-tabs panel-success">
-    <div class="panel-heading">
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="#nowshowing" data-toggle="tab">Showing Now</a></li>
-      </ul>
-    </div>
-    <div class="panel-body">
-      <div class="tab-content">
-        <div class="tab-pane fade in active" id="nowshowing">
+<div class='container-fluid' style='background-color: black; min-height: 2000px'>
 
 
-   <!--  $connect=[];
-    $conn=new mysqli('localhost','root','','movieshowtimefounder');
+<div  class='row' style='height: 150px'>
+  
+  <div id='cog' class='col' style='height: 150px; text-align: center'>
 
-    $query="SELECT * FROM cinema";
+    <button type="button" class='btn btn-dark' style=' margin-top: 5px; height: 120px; border: 4px solid purple'>
+      
+        <p>Choose your Prefered cinema</p>
 
-    $qr=$conn->query($query); -->
+        <select class='form-group showUser(this.value)' name="cinema_id" id='exam'>
+       
+      <option value="All Cinemas"  style='border: 0'>All Cinemas</option>
 
-          <?php 
+      <?php if(!empty($connect)){
+                            foreach($connect as $id=>$name){
+                                echo "<option value='$id'>$name</option>";
+                            }
+                        } 
+
+                        ?>
+      
+    
+    </select>
+
+
+    </button>
+
+ <div class='container' style='margin-top: 40px'>
+
+<div class='row'>
+
+<div class='col' style='height: 30px; text-align: left; background-color:purple'>
+  
+ <button class="btn btn-lg" style='margin-top: 5px; background-color: white; color: black;z-index: 10px' onclick="openCity('London')">Showing Now</button>
+
+</div>
+</div>
+</div>
+<div class='container'>
+
+<div class='row'>
+
+<div class='col' style='height: 4000px; text-align: left; background-color:white; border:1px solid purple'>
+
+  <?php 
+
           $count=0;
            $conn=new mysqli('localhost','root','','movieshowtimefounder');
-
           $res=$conn->query("select * from movies;");
           while ($row=$res->fetch_object()) {
              // $_SESSION['movie']=;
@@ -158,62 +193,60 @@
               $count=0;
             }
 
-            echo " 
-            <div class='col-md-3 col-sm-12'>
-              <div class='card-container'>
-                <div class='card'>
-                  <div class='front'>
-                    <div class='cover'>
-                      <img src='moviephotos/".$row->picture."'/> 
-                    </div>
-                    <div class='content'>
-                      <div class='main'>
-                        <h3 class='name'>".$row->movie_name ."</h3>
-
-                        
-
-                        <p class='profession'><b>Director: </b> " .$row->movie_director ."</p>
-                        
-
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end front panel -->
-                  <div class='back'>
-                    <div class='content'>
-                      <div class='main'>
-                        <h4 class='text-center'>".$row->movie_name ."</h4>
-                        <p class='text-center'>".$row->movie_description ." </p>
-                      </div>
-                      <div style='margin-top: 10vw;' class='buy_ticket'>
-
-                       <form action='ticketProcessing.php' method='post' >
-                        <input type='hidden' name='movieId' value='".$row->movies_id."' >
-                        <input type='submit'  class='btn btn-primary btn-xs btn-block' type='submit' value='Showtime and Details' name='submit'>
-                      </form>
-
-                    </div>
-                  </div>
-                </div> <!-- end card -->
-              </div> <!-- end card-container -->
-            </div>
-          </div>";
-
-          $count++;
-        } ?>
-
-
-
-
-      </div>
-    </div>
+ echo "<div class='card' style='width: 18rem; margin-top:40px; '>
+   <img src='moviephotos/".$row->picture."' class='card-img-top' style='height:250px; width:287px' alt='...'>
+  <div class='card-body'>
+  <h4 class='çard-title'>".$row->movie_name ."</h4>
+    <p class='card-text'><b>Director: </b>".$row->movie_director."</p>
+   <p class='card-text'><b>Description: </b>".$row->movie_description."</p>
+    <form action='ticketProcessing.php' method='post' >
+        <input type='hidden' name='movieId' value='".$row->movies_id."' >
+         <input type='submit'  class='btn btn-primary btn-xs btn-block' type='submit' value='Showtime and Details' name='submit'>
+    </form>
   </div>
+</div> ";
+  
+          $count++;
+  }?>
+ 
 </div>
 </div>
+</div>
+
+</div>
+
+    
+
+  </div>
+
+</div>
 
 
 
+
+
+
+
+
+
+
+</div>
 
 <?php include('footer.php') ?>
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

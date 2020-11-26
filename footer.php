@@ -206,7 +206,14 @@ function showmovie(str) {
 
 
 
-
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(London).style.display = "block";
+}
 
 
 </script>
