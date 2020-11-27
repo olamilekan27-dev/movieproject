@@ -575,6 +575,46 @@ function getMovieshowingAssoc(){
 }
 
 
+class timeslot{
+
+
+//member variables
+
+	public $dbobj;
+
+
+		public function __construct(){
+
+				//create instance/object of DatabaseConfig class
+
+			$this->dbobj = new DatabaseConfig;
+
+		}
+
+
+function registertimeslot($time){
+
+
+		$result=$this->dbobj->dbcon->query("INSERT INTO timeslot SET
+
+	 		time='$time'");
+
+		if(empty($this->dbobj->dbcon->insert_id)){
+ 
+	 		//Show me the error please
+	 		die($this->dbobj->dbcon->error);
+
+	 	}
+
+	 	return $this->dbobj->dbcon->insert_id;
+
+}
+
+
+
+}
+
+
 
  //$admin=new authentication;
 

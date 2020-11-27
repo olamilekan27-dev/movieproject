@@ -1,4 +1,9 @@
 
+<?php
+
+
+?>
+
     <!--mobile navigation bar start-->
     <div class="mobile_nav">
       <div class="nav_bar">
@@ -20,7 +25,9 @@
     <div class="sidebar">
       <div class="profile_info">
         <img src="../project6/cinema.jpg" class="profile_image" alt="">
-        <h4> <?php echo $_SESSION['adminname']; ?></h4>
+        <h4> <?php
+
+         echo $_SESSION['Username']; ?></h4>
       </div>
       <a href="cinemadashboard.php"><i class="fas fa-cogs"></i><span>Cinema</span></a>
       <a href="movielistdashboard.php"><i class="fas fa-table"></i><span>Movies</span></a>

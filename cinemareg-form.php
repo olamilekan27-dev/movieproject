@@ -1,10 +1,11 @@
 <?php 
 
-include('header.php');
+ob_start();
+
+include('header2.php');
 
      
 include('movieclass.php');
-
 
 ?>
 
@@ -261,7 +262,7 @@ $cinema_id=$cinema-> registercinema($_POST['cinema_name'],$_POST['username'],$_P
 </body>
 
     
-              
+   <?php ob_end_flush(); ?>           
         
   <?php include('footer.php') ?>
 

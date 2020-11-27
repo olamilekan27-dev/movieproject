@@ -167,7 +167,7 @@ include 'movieclass.php';
 
 <div class='row'>
 
-<div class='col' style='height: 30px; text-align: left; background-color:purple'>
+<div class='col-12 text-left p-2' style='background-color:purple'>
   
  <button class="btn btn-lg" style='margin-top: 5px; background-color: white; color: black;z-index: 10px' onclick="openCity('London')">Showing Now</button>
 
@@ -176,40 +176,33 @@ include 'movieclass.php';
 </div>
 <div class='container'>
 
-<div class='row'>
+<div class='row bg-white text-left' style='border:1px solid purple'>
 
-<div class='col' style='height: 4000px; text-align: left; background-color:white; border:1px solid purple'>
 
   <?php 
 
-          $count=0;
            $conn=new mysqli('localhost','root','','movieshowtimefounder');
-          $res=$conn->query("select * from movies;");
+          $res=$conn->query("select * from movies");
           while ($row=$res->fetch_object()) {
-             // $_SESSION['movie']=;
 
-            if ($count==4) {
-              echo "<div class='row'>";
-              $count=0;
+             echo "<div class='card col-sm-4' style='width: 18rem; margin-top:40px;'>
+              <img src='moviephotos/".$row->picture."' class='card-img-top' alt='...' style='height:200px'>
+              <div class='card-body'>
+                <h4 class='çard-title'>".$row->movie_name ."</h4>
+                <p class='card-text'><b>Director: </b>".$row->movie_director."</p>
+                <p class='card-text'><b>Description: </b>".$row->movie_description."</p>
+                
+                </div>
+                <div class='card-footer bg-white'>
+                  <form action='ticketProcessing.php' method='post' >
+                <input type='hidden' name='movieId' value='".$row->movies_id."'>
+                <input type='submit'  class='btn btn-primary btn-xs btn-block' type='submit' value='Showtime and Details' name='submit'>
+                </form>
+                </div>
+              </div>";
             }
 
- echo "<div class='card' style='width: 18rem; margin-top:40px; '>
-   <img src='moviephotos/".$row->picture."' class='card-img-top' style='height:250px; width:287px' alt='...'>
-  <div class='card-body'>
-  <h4 class='çard-title'>".$row->movie_name ."</h4>
-    <p class='card-text'><b>Director: </b>".$row->movie_director."</p>
-   <p class='card-text'><b>Description: </b>".$row->movie_description."</p>
-    <form action='ticketProcessing.php' method='post' >
-        <input type='hidden' name='movieId' value='".$row->movies_id."' >
-         <input type='submit'  class='btn btn-primary btn-xs btn-block' type='submit' value='Showtime and Details' name='submit'>
-    </form>
-  </div>
-</div> ";
-  
-          $count++;
-  }?>
- 
-</div>
+?>
 </div>
 </div>
 
