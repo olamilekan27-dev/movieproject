@@ -89,10 +89,12 @@ if (count($errors)==0) {
         $cinema=new authentication;
          
 //md5 here encript our password 
-$cinema_id=$cinema-> registercinema($_POST['cinema_name'],$_POST['username'],$_POST['cinema_manager'],$_POST['cinema_address'],$_POST['cinema_phone'],$_POST['cinema_seat_capacity'],$_POST['cinema_other_details'],md5($_POST['password']));
-
-
+$cinema_id=$cinema->registercinema($_POST['cinema_name'],$_POST['username'],$_POST['cinema_manager'],$_POST['cinema_address'],$_POST['cinema_phone'],$_POST['cinema_seat_capacity'],$_POST['cinema_other_details'],md5($_POST['password']));
+  if(!empty($cinema_id)){
            header('Location:login.php?msg=successfully registered');
+         }else{
+          die("There is no Cinema ID");
+         }
 
   }
 

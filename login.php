@@ -1,4 +1,3 @@
-
 <?php 
 
 ob_start();
@@ -79,13 +78,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['submit']=='sign in'){
 
 
 ?>
-<body style="background-image:url(project6/world.png);background-repeat: no-repeat;background-size:cover; ">
+<body style="background-image:url(project6/bg.jpg);background-repeat: no-repeat;background-size:cover; ">
 
 	
 
-<div class="wrapper">
+<div class="wrapper" style='margin-top: 40px'>
   <div class="title">
-  	<!-- <div style='color: yellow,'><?php echo $_GET['msg']; ?></div> -->
+  	<div style='font-size: 25; color: #511730'><?php echo !empty($_GET['msg'])?$_GET['msg']:''; ?></div> 
     <h1>Login form</h1>
   </div>
   <div class="Contact-form">

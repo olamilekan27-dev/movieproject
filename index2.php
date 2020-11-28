@@ -1,11 +1,8 @@
 
 <?php 
-if (!session_id()) {
-# code...
-  session_start();
-} 
 include 'movieclass.php';
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -130,8 +127,8 @@ include 'movieclass.php';
     
 </div>
 
-</div>
 
+</div>
 
 
 <div class='container-fluid' style='background-color: black; min-height: 2000px'>
@@ -162,53 +159,7 @@ include 'movieclass.php';
 
 
     </button>
-
- <div class='container' style='margin-top: 40px'>
-
-<div class='row'>
-
-<div class='col-12 text-left p-2' style='background-color:purple'>
-  
- <button class="btn btn-lg" style='margin-top: 5px; background-color: white; color: black;z-index: 10px' onclick="openCity('London')">Showing Now</button>
-
-</div>
-</div>
-</div>
-<div class='container'>
-
-<div class='row bg-white text-left' style='border:1px solid purple'>
-
-
-  <?php 
-
-           $conn=new mysqli('localhost','root','','movieshowtimefounder');
-          $res=$conn->query("select * from movies");
-          while ($row=$res->fetch_object()) {
-
-             echo "<div class='card col-sm-4' style='width: 18rem; margin-top:40px;'>
-              <img src='moviephotos/".$row->picture."' class='card-img-top' alt='...' style='height:200px'>
-              <div class='card-body'>
-                <h4 class='çard-title'>".$row->movie_name ."</h4>
-                <p class='card-text'><b>Director: </b>".$row->movie_director."</p>
-                <p class='card-text'><b>Description: </b>".$row->movie_description."</p>
-                
-                </div>
-                <div class='card-footer bg-white'>
-                  <form action='ticketProcessing.php' method='post' >
-                <input type='hidden' name='movieId' value='".$row->movies_id."'>
-                <input type='submit'  class='btn btn-primary btn-xs btn-block' type='submit' value='Showtime and Details' name='submit'>
-                </form>
-                </div>
-              </div>";
-            }
-
-?>
-</div>
-</div>
-
-</div>
-
-    
+ 
 
   </div>
 
@@ -219,27 +170,85 @@ include 'movieclass.php';
 
 
 
+<div class='container' style='margin-top: 40px'>
+
+
+  <?php 
+
+           $conn=new mysqli('localhost','root','','movieshowtimefounder');
+          $res=$conn->query("select * from movies");
+          while ($row=$res->fetch_object()) {
+
+              echo"
+
+
+<div class='row'>
+  
+
+<div class='col-md-2 col-12' style='height: 100px; text-align: right'>
+  
+<a href='' style='color: purple; text-decoration: none; font-size:25px; font-family: arial'><b>NOW SHOWING</b></a>
+
+</div>
+
+<div class='col-md-2 col-12' style='margin-left: 10px; height: 150px;'>
+
+ <img src='moviephotos/".$row->picture."' alt='' class='rounded' style='height:220px; width: 100%; margin-top:10px'>
+
+</div>
+
+<div class='col-md-7 col-12' style='height: 220px;'>
+
+  
+
+  <div>
+  
+<div style='float: left; height: 90px; width: 60%; margin-top: 10px'>
+
+  <p style='color: purple;'><b>DRAMA</b></p>
+
+  <h3 href='' class='special-a' style='font-size: 30px; text-decoration: none; color: white; padding-top:0px'>".$row->movie_name ."</h3>
+  
+</div>
+
+
+<div  id='def' style='float: right; height: 90px; width: 35%; margin-top: 10px; text-align: center; '>
+  
+  <button id='hah' type='button' class='btn' style='color: white; background-color: purple; display: none'> BOOK NOW</button>
+
+</div>
+
+
+</div>
+
+
+
+<p style='clear:both; color: #6B6865'>".$row->movie_description."</p>
 
 
 
 
 </div>
 
+
+
+</div>
+
+
+
+</div>";
+
+            
+            }
+
+?>
+
+
+
+
+
+
+
 <?php include('footer.php') ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+</div>

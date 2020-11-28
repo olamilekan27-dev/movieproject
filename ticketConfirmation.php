@@ -35,37 +35,27 @@ include('header2.php');
 
 
 
-<div class='container' style='margin-top: 40px;'>
 
-<div class='row ' style='justify-content: center;'>
-
-<div class='col-6 text-left p-2' style='background-color:#D9EDF7'>
-  
-		<?php 
+<div class='container'>
+	<div class="card mb-3" style="max-width: 540px; margin:auto">
+  <div class="card-body" style="background-color: #D9EDF7">
+    <?php 
 
 
 							//$_SESSION['movieId']="";
 
 						echo "".$movieName;
 						?>
+  </div>
 
 
-</div>
-</div>
-</div>
-
-
-
-
-<div class='container'>
-
-<div class='row bg-white text-left' style='border:1px solid #D9EDF7; justify-content: center '>
-	<div class="card mb-3">
+	<div class="card mb-3" style="max-width: 540px; margin:auto">
   <div class="row no-gutters">
     <div class="col-md-4">
-      <img alt="User Pic" src=<?php echo '"moviephotos/'.$row->picture.'"';?> class=" img-responsive">
+      <img alt="User Pic" src=<?php echo '"moviephotos/'.$row->picture.'"';?> class=" img-responsive card-img">
     </div>
     <div class="col-md-8">
+    	
       <div class="card-body">
         <table class="table table-user-information">
 
@@ -77,16 +67,7 @@ include('header2.php');
 									</tr>
 									<tr>
 										<td><strong>Movie Name </strong></td>
-										<td><?php
-
-										$conn=new mysqli('localhost','root','','movieshowtimefounder');
-										$movieIdentity=$conn->query("select * from movies where movies_id=$movieId;");
-
-										$row=$movieIdentity->fetch_object();
-
-										 echo "".$row->movie_name;
-										 ?> 
-										</td>
+										<td><?php echo "".$row->movie_name;?> </td>
 									</tr>
 									<tr>
 										<td><strong>Time </strong></td>
@@ -109,12 +90,12 @@ include('header2.php');
 						</tbody>
 
 					</table>
-     				 </div>
-    				</div>
-  					</div>
-					</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
 
 
-
-					</div>
-					</div>

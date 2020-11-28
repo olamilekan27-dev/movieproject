@@ -515,22 +515,10 @@ class movieshowtime{
 function Adddetails($cinemaid,$movieid,$cinemaname,$moviename,$showstartdate,$showenddate,$weekdays,$weekend,$bluckbluster,$movies3d){
 
 		$result=$this->dbobj->dbcon->query("INSERT INTO movie_showings SET
-
-
 			cinema_id='$cinemaid', movies_id='$movieid',cinema_name='$cinemaname', movie_name='$moviename', show_start_date='$showstartdate', show_end_date='$showenddate', weekdays='$weekdays', weekend = '$weekend', bluckbluster='$bluckbluster', movies3d='$movies3d'");
 
 
-
-
-			if(empty($result->dbobj->dbcon->insert_id)){
-
-				die($this->dbobj->dbcon->error);
-			}
-
-
-
 			return $result;
-
 
 }
 

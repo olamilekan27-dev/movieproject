@@ -63,7 +63,7 @@ a:hover{color:purple;}
 
 body {
   color: #fff;
-  background: #63738a;
+  background: #63738;
   font-family: 'Roboto', sans-serif;
 }
 .form-control {
@@ -448,7 +448,7 @@ label #sidebar_btn:hover{
 }
 
 body{
-  background-image: url('project6/world.png');
+  background-image: url('project6/bg.jpg');
  /*background: url('project6/cinema.jpg') no-repeat top center;*/
   background-size: cover;
   height: 100vh;
@@ -567,18 +567,8 @@ body{
   padding: 0px 10px;
 }
 
-/* Add an active class to the active dropdown button */
-.active {
-  background-color: green;
-  color: white;
-}
 
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-  display: none;
-  background-color: #262626;
-  padding-left: 8px;
-}
+
 
 /* Optional: Style the caret down icon */
 .fa-caret-down {

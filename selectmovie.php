@@ -117,20 +117,19 @@ if(empty($_POST['movies3d'])){
                
              
         $movieshowtime =new  movieshowtime;
-         
+
  
       $movie_showing_id=$movieshowtime->Adddetails($_POST['selectcinema'],$_POST['selectmovie'],$_POST['selectcinema'],$_POST['selectmovie'],$_POST['showstart'],$_POST['showend'],$_POST['weekdays'],$_POST['weekend'],$_POST['bluckbluster'],$_POST['movies3d']);
+  //        var_dump($_POST['']);
+//exit();
 
-          var_dump($_POST['']);
-          exit();
-
-           header('Location:admin/cinemadashboard.php?msg=successfully registered');
+           header('Location: admin/showtimedashboard.php?msg=successfully registered');
 
   }
 
 
-}
 
+}
 
 
 ?>

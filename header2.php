@@ -102,7 +102,7 @@ session_start(); //
               <nav class="navbar navbar-expand-lg">
                           
 
-                          <a class="navbar-brand" href="#" style='color: white; font-family:Verdana;margin-left:70px; font-size: 25px'>Movies Date</a>
+                          <a class="navbar-brand" href="#" style='color: purple; font-family:Verdana;margin-left:70px; font-size: 25px'>Movies Date</a>
                            
 
                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,18 +118,18 @@ session_start(); //
 
                                          <li class="nav-item active">
                                               
-                                               <a class="nav-link" href="#success" style='color: purple; font-family:Verdana; margin-right:45px;  font-size: 15px;'>HOME<span class="sr-only">(current)</span></a>
+                                               <a class="nav-link" href="index.php" style='color: purple; font-family:Verdana; margin-right:45px;  font-size: 15px;'>HOME<span class="sr-only">(current)</span></a>
                                          </li>
                           
                                          <li class="nav-item navv">
                                                
-                                               <a class="nav-link" href="#pro" style='font-family:Verdana; margin-right:45px; font-size: 15px'>MOVIES</a>
+                                               <a class="nav-link" href="#mov" style='font-family:Verdana; margin-right:45px; font-size: 15px;color: purple'>MOVIES</a>
                                                                              </li>
      
 
                                          <li class="nav-item">
                                               
-                                               <a class="nav-link" href="cinema.html" style='font-family:Verdana; margin-right:45px; font-size: 15px'>CINEMA</a>
+                                               <a class="nav-link" href="cinema.html" style='font-family:Verdana; margin-right:45px; font-size: 15px;color: purple'>CINEMA</a>
                                         
 
                                          </li>
@@ -137,13 +137,13 @@ session_start(); //
 
                                            <li class="nav-item">
                                               
-                                               <a class="nav-link" href="#bog" style='font-family:Verdana; margin-right:45px; font-size: 15px'>TICKET PRICES</a>
+                                               <a class="nav-link" href="#bog" style='font-family:Verdana; margin-right:45px; font-size: 15px;color: purple'>TICKET PRICES</a>
                                           </li>
      
 
                                          <li class="nav-item">
                                               
-                                               <a class="nav-link" href="#for" style='font-family:Verdana; margin-right:45px; font-size: 15px'>SELF HELP</a>
+                                               <a class="nav-link" href="#for" style='font-family:Verdana; margin-right:45px; font-size: 15px;color: purple'>SELF HELP</a>
                                           
                                           </li>
 
@@ -158,7 +158,7 @@ session_start(); //
 
                                            <li class="nav-item">
                                               
-                                               <a class="nav-link" href="" style='font-family:Verdana; margin-right:45px; font-size: 15px'>LOG IN</a>
+                                               <a class="nav-link" href="" style='font-family:Verdana; margin-right:45px; font-size: 15px;color: purple'>LOG IN</a>
                                           
                                           </li>
                                    </ul>

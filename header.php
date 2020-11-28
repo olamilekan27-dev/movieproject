@@ -10,7 +10,7 @@ session_start(); //
 
 
     $connect=[];
-    $conn=new mysqli('localhost','root','','movieshowtimefounder');
+    $conn= new mysqli('localhost','root','','movieshowtimefounder');
 
     $query="SELECT * FROM cinema";
 
@@ -93,7 +93,7 @@ session_start(); //
 
 <body>
 
-<div class='container-fluid' style='height: 620px; background-color: '>
+<div class='container-fluid' style='height: 620px;'>
   
 <div class='row'>
           <div class="col">
@@ -102,7 +102,7 @@ session_start(); //
               <nav class="navbar navbar-expand-lg">
                           
 
-                          <a class="navbar-brand" href="#" style='color: white; font-family:Verdana;margin-left:70px; font-size: 25px'>Movies Date</a>
+                          <a class="navbar-brand" href="#" style='color: purple; font-family:Verdana;margin-left:70px; font-size: 25px'>Movies Date</a>
                            
 
                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,18 +118,18 @@ session_start(); //
 
                                          <li class="nav-item active">
                                               
-                                               <a class="nav-link" href="#success" style='color: purple; font-family:Verdana; margin-right:45px;  font-size: 15px;'>HOME<span class="sr-only">(current)</span></a>
+                                               <a class="nav-link" href="#" style='color: purple; font-family:Verdana; margin-right:45px;  font-size: 15px;'>HOME</a>
                                          </li>
                           
                                          <li class="nav-item navv">
                                                
-                                               <a class="nav-link" href="#pro" style='font-family:Verdana; margin-right:45px; font-size: 15px'>MOVIES</a>
+                                               <a class="nav-link" href="#pro" style='font-family:Verdana; margin-right:45px; font-size: 15px; color:purple'>MOVIES</a>
                                                                              </li>
      
 
                                          <li class="nav-item">
                                               
-                                               <a class="nav-link" href="cinema.html" style='font-family:Verdana; margin-right:45px; font-size: 15px'>CINEMA</a>
+                                               <a class="nav-link" href="#man" style='font-family:Verdana; margin-right:45px; font-size: 15px;color: purple'>CINEMA</a>
                                         
 
                                          </li>
@@ -137,13 +137,13 @@ session_start(); //
 
                                            <li class="nav-item">
                                               
-                                               <a class="nav-link" href="#bog" style='font-family:Verdana; margin-right:45px; font-size: 15px'>TICKET PRICES</a>
+                                               <a class="nav-link" href="login.php" style='font-family:Verdana; margin-right:45px; font-size: 15px;color: purple'>TICKET PRICES</a>
                                           </li>
      
 
                                          <li class="nav-item">
                                               
-                                               <a class="nav-link" href="#for" style='font-family:Verdana; margin-right:45px; font-size: 15px'>SELF HELP</a>
+                                               <a class="nav-link" href="#" style='font-family:Verdana; margin-right:45px; font-size: 15px; color: purple'>SELF HELP</a>
                                           
                                           </li>
 
@@ -151,7 +151,7 @@ session_start(); //
 
                                           <li class="nav-item">
                                               
-                                               <a class="nav-link" href="#for" style='font-family:Verdana; margin-right:50px; font-size: 15px'><i class='fa fa-search' style='color:purple'></i> SEARCH</a>
+                                               <a class="nav-link" href="#" style='font-family:Verdana; margin-right:50px; font-size: 15px; color: purple'><i class='fa fa-search' style='color:purple'></i> SEARCH</a>
                                           
                                           </li>
 
@@ -175,7 +175,7 @@ session_start(); //
 
                                            <li class="nav-item">
                                               
-                                               <a class="nav-link" href="admin/logout.php" style='font-family:Verdana; margin-right:45px; font-size: 15px'>         LOG OUT</a>
+                                               <a class="nav-link" href="admin/logout.php" style='font-family:Verdana; margin-right:45px; font-size: 15px; color: purple'>         LOG OUT</a>
                                           
                                           </li>
                                    </ul>
